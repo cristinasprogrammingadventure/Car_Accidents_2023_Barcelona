@@ -54,3 +54,32 @@ Depuració de dades: Descripció detallada de les tècniques de preprocessat apl
 Resultats: Presentació dels resultats obtinguts.
 
 Conclusions: Principals inferències derivades dels resultats aconseguits.
+
+## **Conclusión**
+
+**Interpretación de las métricas obtenidas con K-Means:**
+
+**El Silhouette Score** mide qué tan similares son los puntos dentro de un mismo clúster comparados con puntos de otros clústers.
+    Valores cercanos a 1 indican que los clústers están bien definidos (los puntos están cerca de los puntos del mismo clúster y lejos de los de otros clústers).
+    Valores cercanos a 0 indican que los puntos están muy cerca del límite entre clústers.
+    Valores negativos significan que los puntos probablemente se han asignado a clústers incorrectos.
+    **Resultado: 0.128**. Un valor de 0.128 es bajo, lo que sugiere que los clústers no están claramente separados, es decir, muchos puntos están cercanos a los bordes entre clústers o los clústers no son muy compactos.
+
+**Davies-Bouldin Index**: El Davies-Bouldin Index (DBI) mide la calidad de los clústers basándose en la relación entre la distancia promedio entre los puntos en un clúster y la distancia entre los clústers.
+    Valores cercanos a 0 indican clústers bien definidos y bien separados (menor es mejor).
+    **Resultado: 1.98**. Un índice de 1.98 indica que los **clústers están razonablemente separados, pero no es excelente**. Valores bajos son mejores, y un DBI menor a 1 se considera bueno.
+
+**¿Qué significa este resultado?**
+
+Silhouette Score (0.128) es bajo, lo que indica que los **clústers podrían no estar bien separados o que existe cierta confusión en los bordes de los clústers**. Podría ser un indicio de que los datos no se ajustan bien al **modelo de K-Means**.
+**Davies-Bouldin Index (1.98) es moderado**, lo que sugiere que los clústers tienen cierta separación, pero podría mejorar.
+
+Tanto el Silhouette Score bajo como el DBI moderado indican que los clústers **no están claramente definidos y hay solapamiento entre ellos**. 
+
+**Mejoras posibles**:
+
+El número de clústers no es óptimo (probar con otros valores de k).
+Los datos no están bien distribuidos para el modelo K-Means (quizás deberías probar con otros modelos como DBSCAN).
+La selección de variables podría mejorar agregando o quitando columnas (como usar distritos o barrios, o explorar mejor los datos antes del clustering), experimentar con más columnas.
+
+¿Debería haber **más columnas y más columnas dummificadas** en lugar de escaladas? Es correcto que algunas variables, como las dummies de las causas de los accidentes, ya se encuentran en formato booleano y no necesitan ser escaladas, ya que su naturaleza es binaria (0 o 1). Sin embargo, las variables como distritos, barrios, incluso días de la semana, o meses, pueden ser categóricas (las de lugar, seguro y las de tiempo me han generado dudas). Ellas son o pueden ser categóricas, podrían haberse dummificado también, en lugar de simplemente transformarlas a enteros. Esto puede ser importante para que los algoritmos de clustering interpreten correctamente estas variables, ya que los valores enteros podrían inducir una relación ordinal que en realidad no existe.

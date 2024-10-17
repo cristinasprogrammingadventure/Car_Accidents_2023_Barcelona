@@ -1,8 +1,8 @@
 # ######**THIS IS A WORK IN PROGRESS REPOSITORY**######
 
-Disclaimer : This project is not finished yet (work in process). Also, there are a few issues with the Jupyter Notebook in GitHub that do not exist in the local environment and they have to be fixed: the city maps generated with Folium appear in blank and they block the rendering of the rest of the work.
+Disclaimer : This project is not finished yet (work in process). Also, there are a few issues with the Jupyter Notebook in GitHub that do not exist in the local environment and they have to be fixed: the interactive city maps generated with Folium appear in blank as GitHub does not display them automatically and very early they block the loading of the rest of the work. Solutions such as HTML, ineserting as image or creating separate links are some of the posibilities.
 
-# **Accidents segons causa conductor gestionats per la Guàrdia Urbana a la ciutat de Barcelona**
+# **Datos de accidentes recogidos por la Guàrdia Urbana en 2023 en la ciudad de Barcelona**
 
 Este conjunto de datos proviene de Open Data BCN y el Servei de dades obertes de l’Ajuntament de Barcelona. Contiene 8897 entradas que corresponden al número de expedientes por accidentes de tráfico en el año 2023 en la ciudad de Barcelona.
 

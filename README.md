@@ -79,7 +79,7 @@ Tanto el Silhouette Score bajo como el DBI moderado indican que los clústers **
 **Mejoras posibles**:
 
 El número de clústers no es óptimo (probar con otros valores de k).
-Los datos no están bien distribuidos para el modelo K-Means (quizás deberías probar con otros modelos como DBSCAN).
+Los datos no están bien distribuidos para el modelo K-Means (probar con otros modelos como DBSCAN).
 La selección de variables podría mejorar agregando o quitando columnas (como usar distritos o barrios, o explorar mejor los datos antes del clustering), experimentar con más columnas.
 
 ¿Debería haber **más columnas y más columnas dummificadas** en lugar de escaladas? Es correcto que algunas variables, como las dummies de las causas de los accidentes, ya se encuentran en formato booleano y no necesitan ser escaladas, ya que su naturaleza es binaria (0 o 1). Sin embargo, las variables como distritos, barrios, incluso días de la semana, o meses, pueden ser categóricas (las de lugar, seguro y las de tiempo me han generado dudas). Ellas son o pueden ser categóricas, podrían haberse dummificado también, en lugar de simplemente transformarlas a enteros. Esto puede ser importante para que los algoritmos de clustering interpreten correctamente estas variables, ya que los valores enteros podrían inducir una relación ordinal que en realidad no existe.
